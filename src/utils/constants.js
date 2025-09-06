@@ -3,6 +3,6 @@ import { env } from '~/config/environment'
 export const WHITELIST_DOMAINS = ['https://todolist-web-fe.vercel.app']
 
 export const WEBSITE_DOMAIN =
-  env.BUILD_MODE === 'production'
-    ? env.WEBSITE_DOMAIN_PRODUCTION
-    : env.WEBSITE_DOMAIN_DEVELOPMENT
+  env.BUILD_MODE === 'dev'
+    ? env.WEBSITE_DOMAIN_DEVELOPMENT
+    : env.WEBSITE_DOMAIN_PRODUCTION
