@@ -13,6 +13,7 @@ export const sessionConfig = {
   cookie: {
     maxAge: 1000 * 60 * 30, // 30 minutes
     httpOnly: true, // security: only server can access cookie
-    secure: false // true: only send cookie over HTTPS
+    secure: env.BUILD_MODE === 'production', // true: only send cookie over HTTPS
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax' // CSRF protection
   }
 }
